@@ -1,1 +1,1 @@
-web: gunicorn eleventh.wsgi
+web: gunicorn eleventh.wsgi.application
