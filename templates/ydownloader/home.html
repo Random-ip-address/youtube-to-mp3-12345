@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+<title>[Fast] youtube to mp3 converter | youtube audio downloader</title>
+<meta name="description" content="Best youtube to mp3 converter | download audio and video from youtube in second. download high quality audio from youtube for free. youtube mp3 downloader.">
+<meta name="keywords" content="mp3,mp4,converter,youtube,downloader">
+<meta name="robots" content="index, follow">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="author" content="youtube to mp3">
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="apple-touch-icon" sizes="180x180" href="{% static 'apple-touch-icon.png' %}" />
+<link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon-32x32.png' %}" />
+<link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon-16x16.png' %}" />
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Train+One&display=swap" rel="stylesheet">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark"><a class="navbar-brand" href="/home"><img class="lazy" title="youtube to mp3" data-src={% static "apple-touch-icon.png" %} width="38px" height="31px" alt="youtube-to-mp3"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active ml-3"><a class="nav-link" href="/home">Home<span class="sr-only">(current)</span></a> </li>
+        <li class="nav-item active ml-3"> <a class="nav-link" href="#">About-us<span class="sr-only">(current)</span></a></li>
+        <li class="nav-item active ml-3"> <a class="nav-link" href="/home">contact-us<span class="sr-only">(current)</span></a></li>
+      </ul>
+    </div>
+  </nav>
+  <section id="top">
+    <div class="container-fluid">
+      <div class="row" style="background-image: linear-gradient(to right top, #b748b7, #8544a0, #593c84, #353063, #1b2241, #1a2b47, #1c344c, #223d50, #2b687f, #3096ac, #3dc8d3, #5ffbf1);">
+        <div class="col-sm-12 mt-1 mb-2">
+          <center>
+            <h1 style="box-shadow: rgba(0,0,0,.19) 0 10px 20px,rgba(0,0,0,.23) 0 6px 6px; font-family: 'Train One', cursive;">YOUTUBE CONVERTER</h1> </center>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row" style="margin-top:50px;">
+        <div class="col-sm-1"> </div>
+        <div class="col-sm-3" id="myDiv">
+          <div aria-live="polite" aria-atomic="true">
+            <div class="toast">
+              <div class="toast-header alert alert-success">
+                <b class="mr-auto">Notifications</b>
+                <small>1 seconds ago</small>
+                <button id="hide" type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+              </div>
+              <div class="toast-body alert alert-success">
+                <br> Downloading starts ...
+                <div class="progress">
+                  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 80%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-3" id="myDiv2">
+          <div aria-live="polite" aria-atomic="true">
+            <div class="toast">
+              <div class="toast-header alert alert-success"> 
+                <b class="mr-auto">Notifications</b>
+                <small>1 seconds ago</small>
+                <button id="hide2" type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+              </div>
+              <div class="toast-body">
+                <br> {% if msg %} {{msg}} {% endif %} </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <form onsubmit="return myvalid()" class="" action="/home/download/" method="post">
+        
+        <div class="row" style="margin-top:20px;"> {% csrf_token %}
+          <div class="input-group mb-3"> {% if video_url %}
+            <input class="form-control" type="search" name="video_url" placeholder="Search" aria-label="Search" value={{video_url}}> {% else %}
+            <input style="border-radius: 50px !important" class="form-control mb--4 shad" id="valid" type="search" value="" name="video_url" placeholder="Enter youtube video url here" aria-label="Search"> {% endif %} </div>
+          <div class="col-md-12 text-center">
+            <button class="btnthird" type="submit"> Search video </button>
+            <div id="loadings"> <img alt="loading" title="loading image" 
+            src={% static "loading-min.gif" %} height="135px" width="138px"></div>
+            <div class="mt-5">
+        <a href="https://facebook.com/sharer/sharer.php?u=http%3A%2F%2F127.0.0.1%3A8000%2Fhome" target="_blank" class="fa fa-facebook"></a>
+        <a href="https://twitter.com/intent/tweet/?text=%5BFast%5D%20youtube%20to%20mp3%20converter%20%7C%20youtube%20audio%20downloader&amp;url=http%3A%2F%2F127.0.0.1%3A8000%2Fhome" target="_blank" rel="noopener" class="fa fa-twitter"></a>
+        <a href="whatsapp://send?text=%5BFast%5D%20youtube%20to%20mp3%20converter%20%7C%20youtube%20audio%20downloader%20http%3A%2F%2F127.0.0.1%3A8000%2Fhome" target="_blank" rel="noopener" class="fa fa-whatsapp"></a>
+        <a href="https://telegram.me/share/url?text=%5BFast%5D%20youtube%20to%20mp3%20converter%20%7C%20youtube%20audio%20downloader&amp;url=http%3A%2F%2F127.0.0.1%3A8000%2Fhome" target="_blank" rel="noopener" class="fa fa-telegram"></a>
+        </div>
+          </div>
+        </div>
+        
+        
+      </form>
+       
+
+      
+    
+      <form name="register_form" id="register_form" enctype="multipart/form-data" class="" action="/home/downloading/" method="post"> {% csrf_token %}
+       
+        <div class="row mt-3 section">
+          <div class="col-sm-3 back2"> {% if thumbnail_url %} <img class="potion" src="{{thumbnail_url}}" alt="Thumbnail here" width="100%">
+            <p id="title" style="margin-top:5px;"><b style="color: #1a1a1a">{{title}}</b></p> {% endif %} </div>
+          <div class="col-sm-9 section back">
+            <div class="row rawp"> </div>
+            <div class="col-sm-5 pt-3 pl-2">
+              <h5>Select Format</h5> </div>
+            <div class="row">
+              <div class="col-sm-2">
+                <label for="cont">Audio(mp3)</label>
+                <input id="cont" type="radio" name="formatRadio" value="audio"> 
+              </div>
+              <div class="col-sm-2">
+                <label for="con">Video(mp4)</label>
+                <input id="con" type="radio" name="formatRadio" value="video"> 
+              </div>
+            </div>
+            <div class="row">
+              <br> </div>
+            <div class="row video">
+              <div class="col-sm-5">
+                <h5>Select Video Quality</h5> </div>
+            </div>
+            <div class="row video">
+              <div class="col-sm-2">
+                <label for="con2">4k[1080p]</label>
+                <input id="con2" type="radio" name="qualityRadio" value="1080p">
+              </div>
+              <div class="col-sm-2">
+                <label for="con3">Ultra HD</label>
+                <input id="con3" type="radio" name="qualityRadio" value="720p">
+              </div>
+              <div class="col-sm-2">
+                <label for="con4">High[360p]</label>
+                <input id="con4" type="radio" name="qualityRadio" value="360p">
+              </div>
+              <div class="col-sm-2">
+                <label for="con5">Medium</label>
+                <input id="con5" type="radio" name="qualityRadio" value="240p" checked>
+              </div>
+              <div class="col-sm-2">
+                <label for="con6">Low[144p]</label>
+                <input id="con6" type="radio" name="qualityRadio" value="144p">
+              </div>
+            </div>
+            <div class="row"> </div>
+            <input type="hidden" name="video_url_d" value={{video_url}}> </div>
+          <div class="row section">
+            <div class="col-md-12 text-center mt-2">
+              <button onclick="return radioValidation();" class="btn download" id="show">Download</button>
+            </div>
+          <div class="form-control mt-4" style="background-color:#E0E3D7">
+            <div class="form-group ml--5 shad">
+              <h5 style="text-align:center; color:#000000;" id="textnf">Description</h5>
+              <label>
+                <textarea class="form-control mt--3 pl-3" cols="150" id="textareaword" style="margin-top: 0px; margin-bottom: 0px; height: 101px; overflow: auto;
+                  resize:none;">{{description}}
+                </textarea>
+              </label>
+            </div>
+          </div>
+          <div class="form-control mt-4" style="background-color:#E0E3D7">
+            <div class="form-group ml--5 shad">
+              <h5 style="text-align:center; color:#000000;">views</h5>
+              <h5 class="form-control mt--3 pl-3  pro">{{views}}</h5> </div>
+          </div>
+          <div class="form-control mt-4" style="background-color:#E0E3D7">
+            <div class="form-group ml--5 shad">
+              <h5 style="text-align:center; color:#000000;">video length</h5>
+              <h5 class="form-control mt--3 pl-3  pro">{{length}} (in second)</h5> </div>
+          </div>
+          <div class="form-control mt-4" style="background-color:#E0E3D7">
+            <div class="form-group ml--5 shad">
+              <h5 style="text-align:center; color:#000000;">video size</h5>
+              <h5 class="form-control mt--3 pl-3  pro">{{length}} (in second)</h5> </div>
+          </div>
+          <div class="form-control mt-4" style="background-color:#E0E3D7">
+            <div class="form-group ml--5 shad">
+              <h5 style="text-align:center; color:#000000;">video rating</h5>
+              <h5 class="form-control mt--3 pl-3  pro">{{rating}} &#x1F44D;</h5> </div>
+          </div>
+          <div class="form-control mt-4" style="background-color:#E0E3D7">
+            <div class="form-group ml--5 shad">
+              <h5 style="text-align:center; color:#000000;">Age restricted</h5>
+              <h5 class="form-control mt--3 pl-3  pro">{{age_restricted}}</h5>
+            </div>
+          </div>
+
+        </div>
+    </div>
+    </div>
+    
+    </form>
+  
+    <div class="container">
+      <h1 style="text-align: center; padding-top: 40px">Youtube to MP3 Converter</h1>
+      <p style="padding-top: 25px">When you try to download a video from YouTube, it is not download video in gallery. But our website allows you to download videos from YouTube.You can call this website <strong>youtube to mp3</strong> converter. </p>
+      <p>
+        <br/>This website youtube to mp3 allows you to download YouTube videos in different formats. Like Mp3 format, which we also know by the name of audio and mp4 format, which we also know by the name of the video. That is, you can extract audio from YouTube videos. <strong>youtube to mp4</strong> converter.</p>
+      <p>
+        <br/>Suppose you liked the song uploaded on YouTube and you want to download it as audio, then from this website you can do it.the name of.this tool is youtube to mp3 converter. </p>
+      <p><strong>youtube video downloader</strong> you can download the video in a very short time.The user interface of this website is very good which makes it easy for people to understand. And people can easily download YouTube videos as Mp3 or Mp4 format means audio or video. </p>
+      <h2 style="text-align: center;">How to download youtube video in mp3 or mp4</h2>
+      <h5 style="padding-top: 25px">STEP-1.</h5>
+      <p>First of all, open YouTube in your computer or mobile phone and copy the URL of the video.</p>
+      <br />
+      <h5>STEP-2.</h5>
+      <p>After that, put the YouTube video URL in the search bar.</p>
+      <br/>
+      <h5>STEP-3.</h5>
+      <p>After that, click on the search button.</p>
+      <br />
+      <h5>STEP-4.</h5>
+      <p>After that, according to your choice select Mp3 or Mp4 option.</p>
+      <br/>
+      <h5>STEP-5.</h5>
+      <p>When you select the option of MP4 or video, then after that you select the video quality.</p>
+      <br />
+      <h5>STEP-6.</h5>
+      <p>After that you click the download button and your video will be downloaded.</p>
+      <h6>Enjoy now!</h6>
+      <h2 style="text-align: center;">Feature of this Tool</h2>
+      <ol style="padding-top: 25px">
+        <li>Free to use.</li>
+        <li>No ragistration required.</li>
+        <li>Its interface is quite easy.</li>
+        <li>Here you can download the video in mp3 and mp4 format.</li>
+        <li>It is much more secure.</li>
+        <li>It may download the video in very small size.</li>
+        <li>Here you can download video and audio in different quality.</li>
+        <li>In addition, our website also provides information about the video.Like what is the size of the video,published date, description of the video, rating of the video.duration of the video.</li>
+        <li>It also saves the space of your phone.</li>
+        <li>download video in 4K, HD, Ultra HD, High, Medium, and Low.</li>
+      </ol>
+      <h2 style="text-align: center;padding-top: 25px">Support Format</h2>
+      <p style="padding-top: 25px">As I mentioned above, you can download YouTube videos in different formats from this website.</p>
+      <ol>
+        <li>you can download YouTube videos by converting them to MP3.</li>
+        <li>And with this, you can download YouTube videos in the format of MP4.</li>
+      </ol>
+      <h3 style="text-align: center;padding-top: 25px">FAQ</h3>
+      <h5 style="padding-top: 25px">How to convert youtube to mp3 ?</h5>
+      <p>Very simple for this, you have to select the MP3 option.</p>
+      <h5>How to download youtube video to mp4 format ?</h5>
+      <p>This is more simple, you have to select the MP4 option.</p>
+      <h5>Is this youtube to mp3 converter free ?</h5>
+      <p>yes this youtube to mp3 or mp4 converter is completely free.</p>
+      <h5>Can we download youtube video in high quality ?</h5>
+      <p>yes this youtube video downloader download video from youtube in high quality.</p>
+      <h5>youtube converter to mp4 for android ?</h5>
+      <p>yes you can convert youtube video to mp4 for android.</p>
+      <h5>convert youtube to mp4 online ?</h5>
+      <p>when you are online than convert youtube to mp4.</p>
+      <h5>can we use youtube to mp3 in computer ?</h5>
+      <p>yes you can use youtube to mp3 in your computer. </p>
+      <h5>can we download movies from youtube ?</h5>
+      <p>Others youtube video downloader website not download movies from youtube ,but our youtube video downloader can do it.</p>
+      <h5>can we tell this website youtube audio downloader ?</h5>
+      <p>yes this is youtube audio downloader.</p>
+      <h5>can we use youtube to mp4 in  iphone ?</h5>
+      <p>yes, you can use this service in iphone. </p>
+      <h5>can we use youtube to mp4 in  mac ?</h5>
+      <p>yes,why not you can use youtube to mp4 mac. </p>
+      <h4 style="text-align: center; padding-top: 40px">Conclusion</h4>
+      <p style="padding-top: 25px">So as we saw above, you can download YouTube videos very easily with the help of this tool.So download YouTube videos in audio and video.Thanks for try our youtube to mp3 converter. </p>
+      <div class="container mt-5">
+        <div class="card-deck">
+          <div class="card text-white bg-dark shad"> <img class="card-img-top lazy" title="youtube to mp3" data-src={% static "youtube-to-mp3.jpg" %} alt="youtube-to-mp3">
+            <div class="card-body">
+              <h5 class="card-title">Easly download youtube to mp3</h5>
+              <p class="card-text">With the help of this tool, you can download YouTube videos in mp3 format.</p>
+            </div>
+          </div>
+          <div class="card text-white bg-dark shad"> <img class="card-img-top lazy" title="youtube to mp4" data-src={% static "youtube-to-mp4.jpg" %} alt="youtube-to-mp4">
+            <div class="card-body">
+              <h5 class="card-title">Easly download youtube to mp4</h5>
+              <p class="card-text">Here you can download youtube video in mp4 format.</p>
+            </div>
+          </div>
+          <div class="card text-white bg-dark shad"> <img class="card-img-top lazy" title="youtube video downloader" data-src={% static "youtube-video-downloader.jpg" %} alt="youtube-video-downloader">
+            <div class="card-body">
+              <h5 class="card-title">Easly download youtube video</h5>
+              <p class="card-text">Download video from youtube and convert different format</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer class="footer text-white bg-primary mt-5 pl-5">
+    <div class="container">
+      <div class="row text-center">
+        <div class="col">
+          <ul class="list-inline mb-2">
+            <li class="list-inline-item"><a class="cld" href="/home">About</a>
+            </li>
+            <li class="list-inline-item"><a class="cld" href="/home">Contact</a> </li>
+          </ul>
+          <!-- <p class="text-muted small mb-4 mb-lg-0 text-white">&copy; youtubetomp3music.com 2021. All Rights Reserved.</p> -->
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+<script>function myvalid(){var e=document.getElementById("valid").value,t=e.search("youtu");return""==e?(alert("please enter video url in search bar"),!1):t<=0?(alert("please enter valid url"),!1):void(document.getElementById("loadings").style.display="block")}function radioValidation(){for(var e=document.getElementsByName("formatRadio"),t=!1,i=0;i<e.length;i++)1==e[i].checked&&(t=!0);if(!t)return alert("please select format"),$("#show").click(function(){$("#myDiv").show()}),!1}document.addEventListener("DOMContentLoaded",function(){var e=[].slice.call(document.querySelectorAll("img.lazy"));if("IntersectionObserver"in window){let t=new IntersectionObserver(function(e,i){e.forEach(function(e){if(e.isIntersecting){let i=e.target;i.src=i.dataset.src,i.classList.remove("lazy"),t.unobserve(i)}})});e.forEach(function(e){t.observe(e)})}}),$(".video").hide(),$("#myDiv").hide(),$("#myDiv2").hide(),console.log("{{thumbnail_url}}"),void 0===$("#title").html()&&$(".section").hide(),$(document).ready(function(){$("#hide2").click(function(){$("#myDiv2").hide()})}),0!="{{msg}}".length&&$("#myDiv2").show(),$(document).ready(function(){$("#hide").click(function(){$("#myDiv").hide()})}),$(document).ready(function(){$('input[type="radio"]').click(function(){var e=$(this).attr("value");if("audio"==e)$(".video").hide();else{var t=$("."+e);$(t).show()}})});
+var descr = document.getElementById("textareaword").value;
+if(descr == ""){
+  document.getElementById("textnf").innerHTML = "Video has no Discription";
+}
+</script>
+</html>
