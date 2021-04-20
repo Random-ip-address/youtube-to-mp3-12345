@@ -1,1 +1,1 @@
-web: waitress-serve --port=$PORT eleventh.wsgi:application
+web: gunicorn eleventh.wsgi

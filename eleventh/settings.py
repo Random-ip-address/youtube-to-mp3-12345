@@ -21,12 +21,12 @@ STATIC_DIR = os.path.join(BASE_DIR,'static')
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ['secret_key']
+SECRET_KEY = '0lz6%2$t^oezcom36^gzq^$xb6o8l-7loh+q$!r55va#&w*^8#'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ["youtube-to-mp3-convert.herokuapp.com/", "localhost"]
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -121,7 +121,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = BASE_DIR / 'static'
 STATICFILES_DIRS = [
 
  STATIC_DIR,
