@@ -24,9 +24,9 @@ STATIC_DIR = os.path.join(BASE_DIR,'static')
 SECRET_KEY = '0lz6%2$t^oezcom36^gzq^$xb6o8l-7loh+q$!r55va#&w*^8#'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["youtube-to-mp3-convert.herokuapp.com"]
 
 
 # Application definition
