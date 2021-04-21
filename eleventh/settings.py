@@ -26,12 +26,13 @@ SECRET_KEY = '0lz6%2$t^oezcom36^gzq^$xb6o8l-7loh+q$!r55va#&w*^8#'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["youtube-to-mp3-convert.herokuapp.com"]
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'whitenoise.runserver_nostatic',  
     'ydownloader',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -51,8 +52,10 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+STATICFILES_STORAGE = 'whitenoise.storage.compressedstaticFilesStorage'
 
 ROOT_URLCONF = 'eleventh.urls'
+
 
 TEMPLATES = [
     {
@@ -121,7 +124,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR,"/static/")
+STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
 STATICFILES_DIRS = [
 
  STATIC_DIR,
