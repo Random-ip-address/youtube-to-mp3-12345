@@ -26,7 +26,7 @@ SECRET_KEY = '0lz6%2$t^oezcom36^gzq^$xb6o8l-7loh+q$!r55va#&w*^8#'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["https://youtube-to-mp3-convert.herokuapp.com/"]
+ALLOWED_HOSTS = ["youtube-to-mp3-convert.herokuapp.com"]
 
 
 # Application definition
