@@ -38,9 +38,9 @@ def downloading(request):
 		print(yt)
 		print("Downloading start ....")
 		if formatRadio == "audio":
-			yt.streams.filter(type = formatRadio).last().download('/Users/Oltjano/Desktop')
+			yt.streams.filter(type = formatRadio).last().download()
 		else:                 
-			yt.streams.first().download('/Users/Oltjano/Desktop')
+			yt.streams.first().download()
 		print("Downloding completed")
 	res = render(request,'ydownloader/home.html',{"msg":"Downloading completed Thanks for try our service"})
 	return res
