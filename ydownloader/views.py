@@ -38,15 +38,17 @@ def downloading(request):
 		yt = YouTube(video_url_d)
 		print(yt)
 		print("Downloading start ....")
+	    homedir = os.path.expanduser("~")
+        dirs = homedir + '/Downloads'
+
 		if formatRadio == "audio":
-			FileResponse(open(yt.streams.filter(type = formatRadio).last().download(skip_existing=True),'rb'))
-			# yt.streams.filter(type = formatRadio).last().download()
+			yt.streams.filter(type = formatRadio).last().download(dirs)
 		else:
-			FileResponse(open(yt.streams.first().download(skip_existing=True),'rb'))                 
-			# yt.streams.first().download()
+			yt.streams.first().download(dirs)
 		print("Downloding completed")
 	res = render(request,'ydownloader/home.html',{"msg":"Downloading completed Thanks for try our service"})
-	return res
+	return FileResponse(open(yt.streams.first().download(skip_existing=True),'rb'))
+	# return res
 
     # r'C:\Users\ankit\Downloads'
     #  r'C:\Users\ankit\Downloads'
