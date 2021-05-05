@@ -13,4 +13,9 @@ urlpatterns = [
 #     url(r'^home/$',views.greetings),
 #     url(r'^home/download/$',views.download),
 #     url(r'^home/downloading/$',views.downloading),
-    
+
+
+# urlpatterns = [
+#     path("", views.IndexView.as_view(), name="index"),
+# ]
+     
