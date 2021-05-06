@@ -48,7 +48,7 @@ def downloading(request):
 			yt.streams.first().download()
 	print("Downloding completed")
 	res = render(request,'ydownloader/home.html',{"msg":"Downloading completed Thanks for try our service"})
-	return FileResponse(open(yt.streams.first().download(),as_attachment=False))
+	return FileResponse(open(yt.streams.first().download(),as_attachment=True))
 	return res
 
     # r'C:\Users\ankit\Downloads'
