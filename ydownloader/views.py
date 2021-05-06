@@ -44,10 +44,10 @@ def downloading(request):
 
 	if formatRadio == "audio":
 			# yt.streams.filter(type = formatRadio).last().download()
-   return FileResponse(open(yt.streams.filter(type = formatRadio).last().download(), 'rb'))
+		return FileResponse(open(yt.streams.filter(type = formatRadio).last().download(), 'rb'))
 	else:
 			# yt.streams.first().download()
-   return FileResponse(open(yt.streams.first().download(), 'rb'))
+		return FileResponse(open(yt.streams.first().download(), 'rb'))
 	print("Downloding completed")
 	res = render(request,'ydownloader/home.html',{"msg":"Downloading completed Thanks for try our service"})
 	
