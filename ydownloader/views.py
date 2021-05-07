@@ -29,29 +29,30 @@ def download(request):
 		return res
 
 def downloading(request):
-	if request.method == 'POST':
-		formatRadio = request.POST['formatRadio']
-		if formatRadio != "audio":
-			qualityRadio = request.POST['qualityRadio']
-		video_url_d = request.POST['video_url_d']
-		print(formatRadio)
+    homedir = os.path.expanduser("~")
+    dirs = homedir + '/Downloads'
+				if request.method == 'POST':
+					formatRadio = request.POST['formatRadio']
+				if formatRadio != "audio":
+					qualityRadio = request.POST['qualityRadio']
+				video_url_d = request.POST['video_url_d']
+				print(formatRadio)
 		# print(qualityRadio)
-		yt = YouTube(video_url_d)
-		print(yt)
-		print("Downloading start ....")
-	homedir = os.path.expanduser("~")
-	dirs = homedir + '/Downloads'
+				yt = YouTube(video_url_d)
+				print(yt)
+				print("Downloading start ....")
+	
 
-	if formatRadio == "audio":
-			# yt.streams.filter(type = formatRadio).last().download()
-		download = yt.streams.filter(type = formatRadio).last().download(dirs)
-	else:
+				if formatRadio == "audio":
+					# yt.streams.filter(type = formatRadio).last().download()
+					download = yt.streams.filter(type = formatRadio).last().download(dirs)
+				else:
 			# yt.streams.first().download()
-		download = yt.streams.first().download(dirs)
-	print("Downloding completed")
+					download = yt.streams.first().download(dirs)
+				print("Downloding completed")
 	# res = render(request,'ydownloader/home.html',{"msg":"Downloading completed Thanks for try our service"})
-	  
-	return FileResponse(open(yt.streams.first().download(skip_existing=True),'rb'))
+
+				return FileResponse(open(yt.streams.first().download(skip_existing=True),'rb'))
 
     # r'C:\Users\ankit\Downloads'
     #  r'C:\Users\ankit\Downloads'
