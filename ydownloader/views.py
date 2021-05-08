@@ -45,16 +45,21 @@ def downloading(request):
 
 	if formatRadio == "audio":
 					# yt.streams.filter(type = formatRadio).last().download()
-		download = yt.streams.filter(type = formatRadio).last().download(dirs)
+		# yt.streams.filter(type = formatRadio).last().download(dirs)
+		response = FileResponse(open(yt.streams.filter(type = formatRadio).last().download(dirs), 'rb'))
+		return response
 	else:
 			# yt.streams.first().download()
-		download = yt.streams.first().download(dirs)
-	print("Downloding completed")
-	# res = render(request,'ydownloader/home.html',{"msg":"Downloading completed Thanks for try our service"})
-	return FileResponse(open(yt.streams.first().download(skip_existing=True),'rb'))
+		# yt.streams.first().download(dirs)
+		response2 = FileResponse(open(yt.streams.first().download(dirs), 'rb'))
+		return response2
+	
 
-    # r'C:\Users\ankit\Downloads'
-    #  r'C:\Users\ankit\Downloads'
+	print("Downloding completed")
+	res = render(request,'ydownloader/home.html',{"msg":"Downloading completed Thanks for try our service"})
+	# return FileResponse(open(yt.streams.first().download(skip_existing=True),'rb'))
+	return res
+    
 	# streams.filter(progressive=True).all()
 	# yt.streams.filter(type = formatRadio,resolution=qualityRadio).first().download(r'C:\Users\ankit\Downloads')
 
