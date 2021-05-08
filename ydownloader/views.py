@@ -46,12 +46,12 @@ def downloading(request):
 	if formatRadio == "audio":
 					# yt.streams.filter(type = formatRadio).last().download()
 		yt.streams.filter(type = formatRadio).last().download(dirs)
-		response = FileResponse(open(title+'.webm' , 'rb'))
+		response = FileResponse(open(yt.title + '.webm' , 'rb'))
 		return response
 	else:
 			# yt.streams.first().download()
 		yt.streams.first().download(dirs)
-		response2 = FileResponse(open(title+'.mp4', 'rb'))
+		response2 = FileResponse(open(yt.title + '.mp4', 'rb'))
 		return response2
 	
 
