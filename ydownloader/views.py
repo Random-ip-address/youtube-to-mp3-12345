@@ -56,9 +56,9 @@ def downloading(request):
 	
 
 	print("Downloding completed")
-	res = render(request,'ydownloader/home.html',{"msg":"Downloading completed Thanks for try our service"})
+	# res = render(request,'ydownloader/home.html',{"msg":"Downloading completed Thanks for try our service"})
 	# return FileResponse(open(yt.streams.first().download(skip_existing=True),'rb'))
-	return res
+	# return res
     
 	# streams.filter(progressive=True).all()
 	# yt.streams.filter(type = formatRadio,resolution=qualityRadio).first().download(r'C:\Users\ankit\Downloads')
